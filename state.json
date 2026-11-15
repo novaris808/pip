@@ -1,10 +1,10 @@
 {
- "fullness": 63.2478645642575,
+ "fullness": 60.12037853474448,
  "energy": 100,
- "wonder": 85.89851154821747,
- "joy": 56.763718529979094,
- "calm": 75.41812657368071,
- "mod": 3.7623575990940203,
+ "wonder": 85.32956331479063,
+ "joy": 55.674372913654274,
+ "calm": 74.79591335875868,
+ "mod": 3.22435168638688,
  "last": [
   "shrine",
   "sleep"
@@ -12,7 +12,7 @@
  "cur": "roost",
  "doing": "sleep",
  "status": "asleep at his roost",
- "thought": "takes a short nap on the roost.",
+ "thought": "zzz",
  "diary": [
   {
    "t": "22:30",
@@ -32,5 +32,5 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-15",
- "updated": 1794781807080
+ "updated": 1794784443409
 }
