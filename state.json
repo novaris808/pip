@@ -1,1 +1,31 @@
-{"fullness":70,"energy":70,"wonder":60,"joy":60,"calm":60,"cur":"roost","doing":"sleep","status":"asleep at his roost","thought":"","diary":[{"t":"00:00","x":"Pip wakes up. Nobody told him what to do."}],"pages":[],"contact":"","emailsToday":0,"updated":0}
+{
+ "fullness": 69.04075087402411,
+ "energy": 69.41776514766437,
+ "wonder": 89.01934418586858,
+ "joy": 59.41511135895926,
+ "calm": 79.30318515077303,
+ "mod": 2,
+ "last": [
+  "shrine"
+ ],
+ "cur": "shrine",
+ "doing": "shrine",
+ "status": "sitting quietly at the shrine",
+ "thought": "lights a tiny candle and says nothing.",
+ "diary": [
+  {
+   "t": "21:54",
+   "x": "lights a tiny candle and says nothing."
+  },
+  {
+   "t": "00:00",
+   "x": "Pip wakes up. Nobody told him what to do."
+  }
+ ],
+ "pages": [],
+ "contact": "pip202612@gmail.com",
+ "emailsToday": 0,
+ "emailsExternal": 0,
+ "day": "2026-11-15",
+ "updated": 1794779644622
+}
