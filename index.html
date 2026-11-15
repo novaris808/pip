@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>Pip's world</title>
+<style>
+:root{--cream:#f6e6d2;--ink:#2a2160;--orange:#f0a860;--violet:#7a52d9}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden;background:#140c3a;font-family:Nunito,"Trebuchet MS",system-ui,sans-serif;color:var(--ink);touch-action:none}
+#c{position:fixed;inset:0;width:100%;height:100%;image-rendering:pixelated}
+.pill{background:var(--cream);border-radius:22px;outline:2px dashed #cdb89c;outline-offset:-6px;box-shadow:0 4px 14px #0006}
+#needs{position:fixed;top:8px;left:8px;right:8px;display:flex;padding:10px 6px 8px}
+.n{flex:1;padding:0 6px;font-size:12px;font-weight:700;min-width:0}
+.n+.n{border-left:2px dashed #cdb89c}
+.n i{display:block;height:7px;border-radius:4px;background:#e4d3bc;margin-top:4px;overflow:hidden;border:1.5px solid var(--ink)}
+.n b{display:block;height:100%;transition:width .8s}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;border:1.5px solid var(--ink);vertical-align:-1px}
+#clock{position:fixed;top:92px;left:8px;background:#2a2160;color:#eee;padding:8px 16px;border-radius:22px;font-weight:800;font-size:18px}
+#gift{position:fixed;top:92px;right:70px;background:var(--orange);border:0;color:var(--ink);font:800 16px inherit;padding:12px 18px;border-radius:24px;box-shadow:0 4px 14px #0006}
+#menuBtn{position:fixed;top:92px;right:8px;width:50px;height:50px;border-radius:50%;border:0;font-size:22px;color:var(--ink);background:var(--cream);box-shadow:0 4px 14px #0006}
+#menu{position:fixed;top:150px;right:8px;display:none;flex-direction:column;gap:8px;align-items:flex-end}
+#menu button{background:#1d1650;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 15px inherit}
+#mini{position:fixed;top:160px;right:8px;width:112px;height:112px;border-radius:50%;background:var(--cream);outline:2px dashed #cdb89c;outline-offset:-6px;box-shadow:0 4px 14px #0006}
+#mini.up{top:300px}
+#now{position:fixed;left:8px;top:140px;width:calc(100% - 140px);max-width:330px}
+#nowBtn{background:var(--cream);border:0;border-radius:22px;padding:9px 16px;font:800 16px inherit;color:var(--ink);box-shadow:0 4px 14px #0006}
+#card{display:none;padding:16px;margin-top:8px;font-size:15px;max-height:46vh;overflow:auto}
+#card h3{margin:0 0 6px;font-size:19px}
+#card em{display:block;margin-bottom:8px}
+#card small{color:#7c6d8f;display:block;margin-top:8px}
+#card a{color:var(--violet);font-weight:800;cursor:pointer}
+#status{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:#e9d9c6e8;border-radius:30px;padding:12px 22px;font-weight:700;font-size:17px;white-space:nowrap;max-width:94vw;overflow:hidden;text-overflow:ellipsis}
+#pad button{position:fixed;width:58px;height:58px;border-radius:50%;border:0;background:#f6e6d299;color:var(--ink);font-size:24px;bottom:calc(88px + env(safe-area-inset-bottom))}
+#panel{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:18px}
+#panel .box{background:var(--cream);border-radius:22px;padding:20px;max-width:440px;width:100%;max-height:78vh;overflow:auto;font-size:15px}
+#panel h2{margin:0 0 10px}
+#panel li{padding:7px 0;border-bottom:1px dashed #cdb89c;list-style:none}
+#panel ul{margin:0;padding:0}
+#panel small{color:#7c6d8f}
+input,textarea{width:100%;font:inherit;padding:9px;border-radius:12px;border:2px solid var(--ink);background:#fffaf2;margin:4px 0 10px}
+.b{background:var(--orange);border:0;border-radius:18px;padding:9px 16px;font:800 15px inherit;color:var(--ink);margin:4px 6px 0 0}
+.b.alt{background:#e4d3bc}
+button:focus-visible{outline:3px solid var(--violet)}
+</style></head><body>
+<canvas id="c"></canvas>
+<div id="needs" class="pill"></div>
+<div id="clock"></div>
+<button id="gift">leave him something</button>
+<button id="menuBtn" aria-label="Menu">&#9776;</button>
+<div id="menu"><button data-p="diary">Diary</button><button data-p="gift">Leave him something</button><button data-p="pages">His pages</button></div>
+<canvas id="mini" width="224" height="224"></canvas>
+<div id="now"><button id="nowBtn">&#9679; right now</button><div id="card" class="pill"></div></div>
+<div id="status"></div>
+<div id="pad"><button id="tl" style="left:10px">&#9664;</button><button id="tr" style="left:74px">&#9654;</button><button id="mf" style="right:74px">&#9650;</button><button id="mb" style="right:10px">&#9660;</button></div>
+<div id="panel"><div class="box" id="box"></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+
+const NAME='Pip';
+const NEEDS=[['fullness','#4cc46a'],['energy','#f0a030'],['wonder','#8a50e8'],['joy','#f5c518'],['calm','#3ab0f0']];
+const $=s=>document.querySelector(s),rnd=(a,b)=>a+Math.random()*(b-a);
+const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const L={roost:{n:'his roost',ang:null},cafe:{n:'the cafe',ang:0,c:0xb5651d,t:'CAFE'},shrine:{n:'the shrine',ang:.9,c:0x9a3b5c,t:'SHRINE'},cinema:{n:'the cinema',ang:1.8,c:0x3b6ea5,t:'CINEMA'},
+gallery:{n:'the gallery',ang:2.7,c:0x5b8c5a,t:'GALLERY'},music:{n:'the music shop',ang:3.6,c:0x8a5ab5,t:'PIANOS'},net:{n:'the internet cafe',ang:4.5,c:0x2c8c8c,t:'INTERNET'},salon:{n:'the feather salon',ang:5.4,c:0xc2578a,t:'SALON'}};
+const fresh=()=>({fullness:70,energy:70,wonder:60,joy:60,calm:60,cur:'roost',doing:'sleep',status:'asleep at his roost',thought:'',diary:[],pages:[],contact:'',emailsToday:0,updated:0});
+let S=fresh();
+const hour=()=>{const d=new Date();return d.getHours()+d.getMinutes()/60},night=()=>hour()>=23||hour()<9;
+const hhm=()=>{const d=new Date();return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')};
+const cap=t=>t?t[0].toUpperCase()+t.slice(1):'';
+const ago=ms=>{const m=Math.round((Date.now()-ms)/6e4);return m<1?'just now':m<90?m+' min ago':Math.round(m/60)+' h ago'};
+function loadState(){fetch('state.json?'+Date.now()).then(r=>r.json()).then(j=>{S=Object.assign(fresh(),j);ui()}).catch(()=>{})}
+function ui(){
+  $('#needs').innerHTML=NEEDS.map(([n,c])=>`<div class="n"><span class="dot" style="background:${c}"></span>${cap(n)}<i><b style="width:${Math.round(S[n])}%;background:${c}"></b></i></div>`).join('');
+  $('#clock').textContent=(night()?'\u263E ':'\u2600 ')+hhm();
+  const d=dist(pino.position,target());
+  $('#status').textContent=NAME+' is '+(d>1.5?'walking to '+L[S.cur].n:(S.status||'asleep at his roost'));
+  if($('#card').style.display==='block')card();
+}
+function card(){
+  $('#card').innerHTML=`<h3>${esc(cap(S.status||'asleep at his roost'))}</h3><em>${esc(S.thought||'Nobody told him what to do.')}</em><small>emails sent today: ${S.emailsToday||0} &middot; pages made: ${(S.pages||[]).length}<br>last update: ${S.updated?ago(S.updated):'never'}</small><small><a onclick="panel('diary')">read the diary</a> &middot; <a onclick="panel('pages')">his pages</a></small>`;
+}
+function panel(p){
+  let h='';
+  if(p==='diary')h='<h2>Diary</h2><ul>'+(S.diary.length?S.diary.map(e=>`<li><small>${esc(e.t)}</small><br>${esc(e.x)}</li>`).join(''):'<li>Nothing yet.</li>')+'</ul>';
+  if(p==='pages')h='<h2>His pages</h2><ul>'+((S.pages||[]).length?S.pages.map(g=>`<li><a href="pages/${encodeURIComponent(g.slug)}.html">${esc(g.title)}</a></li>`).join(''):'<li>He has not made any yet.</li>')+'</ul>';
+  if(p==='gift')h=S.contact?`<h2>Leave him something</h2><p>${NAME} has his own email. Send a message or a picture and he reads it next time he is up, and decides for himself what to make of it.</p><a class="b" style="display:inline-block;text-decoration:none" href="mailto:${encodeURIComponent(S.contact)}?subject=${encodeURIComponent('For '+NAME)}">Write to ${NAME}</a>`:'<h2>Leave him something</h2><p>His email is not set up yet.</p>';
+  $('#box').innerHTML=h+'<br><button class="b alt" onclick="closeP()">Close</button>';$('#panel').style.display='flex';$('#menu').style.display='none';
+}
+const closeP=()=>$('#panel').style.display='none';
+$('#gift').onclick=()=>panel('gift');
+$('#menuBtn').onclick=()=>{const m=$('#menu');m.style.display=m.style.display==='flex'?'none':'flex'};
+document.querySelectorAll('#menu button').forEach(b=>b.onclick=()=>panel(b.dataset.p));
+$('#nowBtn').onclick=()=>{const c=$('#card');c.style.display=c.style.display==='block'?'none':'block';$('#mini').classList.toggle('up',c.style.display==='block');card()};
+const dist=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
+// ---------- 3D ----------
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(70,1,.1,200);
+const ren=new THREE.WebGLRenderer({canvas:$('#c'),antialias:false});
+scene.add(new THREE.AmbientLight(0x8888ff,.7));const sun=new THREE.DirectionalLight(0xffffff,.6);sun.position.set(10,20,5);scene.add(sun);
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(160,160),new THREE.MeshLambertMaterial({color:0x2a2f9a}));ground.rotation.x=-Math.PI/2;scene.add(ground);
+scene.add(new THREE.GridHelper(160,40,0x7878f0,0x4a4ac0));
+const R=26;
+function sign(t,c){const cv=document.createElement('canvas');cv.width=256;cv.height=64;const g=cv.getContext('2d');g.fillStyle='#f6e6d2';g.fillRect(0,0,256,64);g.fillStyle='#2a2160';g.font='bold 34px sans-serif';g.textAlign='center';g.fillText(t,128,44);return new THREE.CanvasTexture(cv)}
+function spot(k){const l=L[k];if(l.ang===null)return new THREE.Vector3(0,3.1,0);return new THREE.Vector3(Math.cos(l.ang)*(R-8),0,Math.sin(l.ang)*(R-8))}
+Object.keys(L).forEach(k=>{const l=L[k];
+  if(l.ang===null){const p=new THREE.Mesh(new THREE.CylinderGeometry(.15,.15,3,8),new THREE.MeshLambertMaterial({color:0x6a4a2a}));p.position.y=1.5;scene.add(p);const pl=new THREE.Mesh(new THREE.CylinderGeometry(1,1,.2,12),new THREE.MeshLambertMaterial({color:0x8a6a4a}));pl.position.y=3;scene.add(pl);return}
+  const g=new THREE.Group();g.position.set(Math.cos(l.ang)*R,0,Math.sin(l.ang)*R);
+  const b=new THREE.Mesh(new THREE.BoxGeometry(11,8,8),new THREE.MeshLambertMaterial({color:l.c}));b.position.y=4;g.add(b);
+  const s=new THREE.Mesh(new THREE.PlaneGeometry(7,1.75),new THREE.MeshBasicMaterial({map:sign(l.t)}));s.position.set(0,6.6,4.05);g.add(s);
+  for(let i=-1;i<=1;i++)for(let j=0;j<2;j++){const w=new THREE.Mesh(new THREE.PlaneGeometry(1.4,1.6),new THREE.MeshBasicMaterial({color:Math.random()<.6?0xffd77a:0x1a1450}));w.position.set(i*3.2,1.6+j*2.4-.2,4.05);if(j===0&&i===0)w.scale.set(1.2,1.5,1);g.add(w)}
+  g.lookAt(0,0,0);scene.add(g)});
+const pino=new THREE.Group();
+const bm=new THREE.MeshLambertMaterial({color:0x3b3fd0});
+const body=new THREE.Mesh(new THREE.SphereGeometry(.6,12,10),bm);body.scale.set(1,1.2,1);body.position.y=.8;pino.add(body);
+const head=new THREE.Mesh(new THREE.SphereGeometry(.35,10,8),bm);head.position.set(0,1.75,.15);pino.add(head);
+const beak=new THREE.Mesh(new THREE.ConeGeometry(.06,1.1,6),new THREE.MeshLambertMaterial({color:0xf6e6d2}));beak.rotation.x=Math.PI/2;beak.position.set(0,1.7,.85);pino.add(beak);
+const eye=new THREE.Mesh(new THREE.SphereGeometry(.07,6,6),new THREE.MeshBasicMaterial({color:0xffffff}));eye.position.set(.2,1.85,.35);pino.add(eye);const eye2=eye.clone();eye2.position.x=-.2;pino.add(eye2);
+const sp=spot(S.cur);pino.position.copy(sp);scene.add(pino);
+const target=()=>spot(S.cur);
+let yaw=0,px=0,pz=14;const keys={};
+function resize(){const s=.42;ren.setSize(Math.round(innerWidth*s),Math.round(innerHeight*s),false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()}
+addEventListener('resize',resize);resize();
+addEventListener('keydown',e=>keys[e.key.toLowerCase()]=1);addEventListener('keyup',e=>keys[e.key.toLowerCase()]=0);
+[['tl','arrowleft'],['tr','arrowright'],['mf','arrowup'],['mb','arrowdown']].forEach(([id,k])=>{const b=$('#'+id);['pointerdown'].forEach(ev=>b.addEventListener(ev,e=>{e.preventDefault();keys[k]=1}));['pointerup','pointerleave','pointercancel'].forEach(ev=>b.addEventListener(ev,()=>keys[k]=0))});
+let dragX=null;$('#c').addEventListener('pointerdown',e=>dragX=e.clientX);addEventListener('pointerup',()=>dragX=null);
+addEventListener('pointermove',e=>{if(dragX!==null){yaw-=(e.clientX-dragX)*.006;dragX=e.clientX}});
+const day=new THREE.Color(0x6a5fc8),nt=new THREE.Color(0x120a38),col=new THREE.Color();
+let last=performance.now(),uiT=0,tickT=0,t=0;
+function frame(now){
+  const dt=Math.min(.1,(now-last)/1e3);last=now;t+=dt;
+  if(keys.arrowleft||keys.a)yaw+=1.8*dt;if(keys.arrowright||keys.d)yaw-=1.8*dt;
+  const f=(keys.arrowup||keys.w?1:0)-(keys.arrowdown||keys.s?1:0);
+  px+=-Math.sin(yaw)*f*7*dt;pz+=-Math.cos(yaw)*f*7*dt;px=Math.max(-60,Math.min(60,px));pz=Math.max(-60,Math.min(60,pz));
+  cam.position.set(px,1.7,pz);cam.rotation.set(0,yaw,0);
+  const d=(Math.sin((hour()-9)/24*2*Math.PI)+1)/2;col.copy(nt).lerp(day,d);scene.background=col;scene.fog=new THREE.Fog(col.getHex(),18,70);
+  const tg=target(),dx=tg.x-pino.position.x,dz=tg.z-pino.position.z,dd=Math.hypot(dx,dz);
+  if(dd>.3){pino.position.x+=dx/dd*2.6*dt;pino.position.z+=dz/dd*2.6*dt;pino.position.y=tg.y+Math.abs(Math.sin(t*9))*.12;pino.lookAt(tg.x,pino.position.y,tg.z)}
+  else{pino.position.y=tg.y;pino.lookAt(px,tg.y,pz);body.scale.y=S.doing==='sleep'?1:1.2+Math.sin(t*2)*.03}
+  ren.render(scene,cam);mini();
+  uiT+=dt;if(uiT>1){uiT=0;ui()}
+  tickT+=dt;if(tickT>60){tickT=0;loadState()}
+  requestAnimationFrame(frame);
+}
+function mini(){const c=$('#mini'),g=c.getContext('2d'),w=224,s=w/2/40;g.clearRect(0,0,w,w);g.save();g.beginPath();g.arc(112,112,100,0,7);g.clip();
+  g.fillStyle='#cdb89c';Object.values(L).forEach(l=>{if(l.ang!==null){g.fillRect(112+Math.cos(l.ang)*R*s-6,112+Math.sin(l.ang)*R*s-6,12,12)}});
+  g.fillStyle='#f0a030';g.beginPath();g.arc(112+pino.position.x*s,112+pino.position.z*s,8,0,7);g.fill();
+  g.translate(112+px*s,112+pz*s);g.rotate(-yaw+Math.PI);g.fillStyle='#2a2160';g.beginPath();g.moveTo(0,-10);g.lineTo(8,8);g.lineTo(-8,8);g.fill();g.restore()}
+pino.position.copy(target());ui();loadState();requestAnimationFrame(frame);
+</script></body></html>
