@@ -25,5 +25,6 @@ jobs:
       - run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
-          git add -A state.json pages
+          git add state.json
+          if [ -d pages ] && [ -n "$(ls -A pages)" ]; then git add pages; fi
           git diff --cached --quiet || (git commit -m "tick" && git push)
