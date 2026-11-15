@@ -1,18 +1,23 @@
 {
- "fullness": 69.04075087402411,
- "energy": 69.41776514766437,
- "wonder": 89.01934418586858,
- "joy": 59.41511135895926,
- "calm": 79.30318515077303,
- "mod": 2,
+ "fullness": 63.2478645642575,
+ "energy": 100,
+ "wonder": 85.89851154821747,
+ "joy": 56.763718529979094,
+ "calm": 75.41812657368071,
+ "mod": 3.7623575990940203,
  "last": [
-  "shrine"
+  "shrine",
+  "sleep"
  ],
- "cur": "shrine",
- "doing": "shrine",
- "status": "sitting quietly at the shrine",
- "thought": "lights a tiny candle and says nothing.",
+ "cur": "roost",
+ "doing": "sleep",
+ "status": "asleep at his roost",
+ "thought": "takes a short nap on the roost.",
  "diary": [
+  {
+   "t": "22:30",
+   "x": "takes a short nap on the roost."
+  },
   {
    "t": "21:54",
    "x": "lights a tiny candle and says nothing."
@@ -27,5 +32,5 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-15",
- "updated": 1794779644622
+ "updated": 1794781807080
 }
