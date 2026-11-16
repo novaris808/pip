@@ -46,7 +46,7 @@ button:focus-visible{outline:3px solid var(--violet)}
 <div id="clock"></div>
 <button id="gift">leave him something</button>
 <button id="menuBtn" aria-label="Menu">&#9776;</button>
-<div id="menu"><button data-p="diary">Diary</button><button data-p="gift">Leave him something</button><button data-p="pages">His pages</button></div>
+<div id="menu"><button data-p="diary">Diary</button><button data-p="gift">Leave him something</button><button data-p="art">His art</button><button data-p="blog">His blog</button><button data-p="favs">Favourites</button><button data-p="pages">His pages</button></div>
 <canvas id="mini" width="224" height="224"></canvas>
 <div id="now"><button id="nowBtn">&#9679; right now</button><div id="card" class="pill"></div></div>
 <div id="status"></div>
@@ -61,9 +61,9 @@ const $=s=>document.querySelector(s),rnd=(a,b)=>a+Math.random()*(b-a);
 const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const L={roost:{n:'his roost',ang:null},cafe:{n:'the cafe',ang:0,c:0xb5651d,t:'CAFE'},shrine:{n:'the shrine',ang:.9,c:0x9a3b5c,t:'SHRINE'},cinema:{n:'the cinema',ang:1.8,c:0x3b6ea5,t:'CINEMA'},
 gallery:{n:'the gallery',ang:2.7,c:0x5b8c5a,t:'GALLERY'},music:{n:'the music shop',ang:3.6,c:0x8a5ab5,t:'PIANOS'},net:{n:'the internet cafe',ang:4.5,c:0x2c8c8c,t:'INTERNET'},salon:{n:'the feather salon',ang:5.4,c:0xc2578a,t:'SALON'}};
-const fresh=()=>({fullness:70,energy:70,wonder:60,joy:60,calm:60,cur:'roost',doing:'sleep',status:'asleep at his roost',thought:'',diary:[],pages:[],contact:'',emailsToday:0,updated:0});
+const fresh=()=>({blog:[],favs:[],art:[],reading:null,fullness:70,energy:70,wonder:60,joy:60,calm:60,cur:'roost',doing:'sleep',status:'asleep at his roost',thought:'',diary:[],pages:[],contact:'',emailsToday:0,updated:0});
 let S=fresh();
-const hour=()=>{const d=new Date();return d.getHours()+d.getMinutes()/60},night=()=>hour()>=23||hour()<9;
+const hour=()=>{const d=new Date();return d.getHours()+d.getMinutes()/60},night=()=>hour()>=1&&hour()<7;
 const hhm=()=>{const d=new Date();return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')};
 const cap=t=>t?t[0].toUpperCase()+t.slice(1):'';
 const ago=ms=>{const m=Math.round((Date.now()-ms)/6e4);return m<1?'just now':m<90?m+' min ago':Math.round(m/60)+' h ago'};
@@ -76,12 +76,17 @@ function ui(){
   if($('#card').style.display==='block')card();
 }
 function card(){
-  $('#card').innerHTML=`<h3>${esc(cap(S.status||'asleep at his roost'))}</h3><em>${esc(S.thought||'Nobody told him what to do.')}</em><small>emails sent today: ${S.emailsToday||0} &middot; pages made: ${(S.pages||[]).length}<br>last update: ${S.updated?ago(S.updated):'never'}</small><small><a onclick="panel('diary')">read the diary</a> &middot; <a onclick="panel('pages')">his pages</a></small>`;
+  const r=S.reading,rd=r?`<div style="border-bottom:1px dashed #cdb89c;padding-bottom:8px;margin-bottom:8px"><small style="margin:0">Internet <span style="border:1px solid #cdb89c;border-radius:6px;padding:0 5px">${esc(r.kind)}</span> &middot; ${ago(r.t)}</small><div style="font-size:14px;color:#7c6d8f">${esc(r.what)}</div><div>${esc(r.said)}</div></div>`:'';
+  $('#card').innerHTML=rd+`<h3>${esc(cap(S.status||'asleep at his roost'))}</h3><em>${esc(S.thought||'Nobody told him what to do.')}</em><small>emails sent today: ${S.emailsToday||0} &middot; pages: ${(S.pages||[]).length} &middot; paintings: ${(S.art||[]).length}<br>last update: ${S.updated?ago(S.updated):'never'}</small><small><a onclick="panel('diary')">diary</a> &middot; <a onclick="panel('art')">art</a> &middot; <a onclick="panel('blog')">blog</a> &middot; <a onclick="panel('favs')">favourites</a> &middot; <a onclick="panel('pages')">pages</a></small>`;
 }
+const safeUrl=u=>/^https?:\/\//.test(u)?u:'#';
 function panel(p){
   let h='';
   if(p==='diary')h='<h2>Diary</h2><ul>'+(S.diary.length?S.diary.map(e=>`<li><small>${esc(e.t)}</small><br>${esc(e.x)}</li>`).join(''):'<li>Nothing yet.</li>')+'</ul>';
   if(p==='pages')h='<h2>His pages</h2><ul>'+((S.pages||[]).length?S.pages.map(g=>`<li><a href="pages/${encodeURIComponent(g.slug)}.html">${esc(g.title)}</a></li>`).join(''):'<li>He has not made any yet.</li>')+'</ul>';
+  if(p==='art')h='<h2>His art</h2><ul>'+((S.art||[]).length?S.art.map(g=>`<li><img alt="${esc(g.title)}" src="art/${encodeURIComponent(g.slug)}.svg" style="width:100%;border-radius:10px;background:#fffaf2"><br><small>${esc(g.title)}</small></li>`).join(''):'<li>He has not painted anything yet.</li>')+'</ul>';
+  if(p==='blog')h='<h2>His blog</h2><ul>'+((S.blog||[]).length?S.blog.map(g=>`<li><b>${esc(g.title)}</b> <small>${esc(g.t)}</small><br>${esc(g.text)}</li>`).join(''):'<li>No posts yet.</li>')+'</ul>';
+  if(p==='favs')h='<h2>Favourites</h2><ul>'+((S.favs||[]).length?S.favs.map(g=>`<li><a href="${esc(safeUrl(g.url))}" target="_blank" rel="noopener noreferrer">${esc(g.title)}</a><br><small>${esc(g.why)}</small></li>`).join(''):'<li>Nothing saved yet.</li>')+'</ul>';
   if(p==='gift')h=S.contact?`<h2>Leave him something</h2><p>${NAME} has his own email. Send a message or a picture and he reads it next time he is up, and decides for himself what to make of it.</p><a class="b" style="display:inline-block;text-decoration:none" href="mailto:${encodeURIComponent(S.contact)}?subject=${encodeURIComponent('For '+NAME)}">Write to ${NAME}</a>`:'<h2>Leave him something</h2><p>His email is not set up yet.</p>';
   $('#box').innerHTML=h+'<br><button class="b alt" onclick="closeP()">Close</button>';$('#panel').style.display='flex';$('#menu').style.display='none';
 }
