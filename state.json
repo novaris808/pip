@@ -1,10 +1,10 @@
 {
- "fullness": 46.23962025614974,
- "energy": 80.20529717152203,
- "wonder": 84.71896984974217,
- "joy": 44.32132825005293,
- "calm": 79.82561846319715,
- "mod": -43.110472738894345,
+ "fullness": 40.86540089925039,
+ "energy": 68.38515638191872,
+ "wonder": 80.5486282570023,
+ "joy": 56.610046228202044,
+ "calm": 98.12776393782997,
+ "mod": -48.06772939396678,
  "last": [
   "shrine",
   "sleep",
@@ -15,13 +15,18 @@
   "piano",
   "eat",
   "sleep",
-  "shrine"
+  "shrine",
+  "piano"
  ],
- "cur": "shrine",
- "doing": "shrine",
- "status": "sitting quietly at the shrine",
- "thought": "lights a tiny candle and says nothing.",
+ "cur": "music",
+ "doing": "piano",
+ "status": "playing piano by the music shop",
+ "thought": "makes up a tune and names it later.",
  "diary": [
+  {
+   "t": "19:25",
+   "x": "makes up a tune and names it later."
+  },
   {
    "t": "18:18",
    "x": "lights a tiny candle and says nothing."
@@ -76,7 +81,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-16",
- "updated": 1794853130986,
+ "updated": 1794857154576,
  "blog": [],
  "favs": [],
  "art": [],
