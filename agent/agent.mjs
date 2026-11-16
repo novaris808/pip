@@ -4,7 +4,7 @@
 import fs from 'fs';
 
 const NAME = 'Pip', TZ = 'Europe/London', CREATOR = 'jobbyjabberyes12@gmail.com';
-const ALLOW_EXTERNAL_EMAIL = no; // true lets him email other people too (max 3/day)
+const ALLOW_EXTERNAL_EMAIL = false; // true lets him email other people too (max 3/day)
 const E = process.env, KEY = E.GEMINI_API_KEY, MODEL = E.GEMINI_MODEL || 'gemini-2.5-flash';
 const GU = E.GMAIL_USER, GP = E.GMAIL_APP_PASSWORD;
 const UA = 'Mozilla/5.0 (compatible; PipBird/1.0)';
