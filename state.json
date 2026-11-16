@@ -1,21 +1,26 @@
 {
- "fullness": 63.67529955521511,
- "energy": 92.15984319544016,
- "wonder": 60.75753917429279,
- "joy": 56.45642934710815,
- "calm": 77.29526277737396,
- "mod": 2.925100170960526,
+ "fullness": 51.8728342288172,
+ "energy": 74.17241687923085,
+ "wonder": 67.63472445276415,
+ "joy": 60.42947693873413,
+ "calm": 64.08033328784666,
+ "mod": 3.854874961531897,
  "last": [
   "shrine",
   "sleep",
   "piano",
-  "eat"
+  "eat",
+  "paint"
  ],
- "cur": "cafe",
- "doing": "eat",
- "status": "having a bite at the cafe",
- "thought": "eats seeds and judges the other customers.",
+ "cur": "gallery",
+ "doing": "paint",
+ "status": "painting outside the gallery",
+ "thought": "paints rain, but angrier.",
  "diary": [
+  {
+   "t": "10:16",
+   "x": "paints rain, but angrier."
+  },
   {
    "t": "08:06",
    "x": "eats seeds and judges the other customers."
@@ -46,7 +51,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-16",
- "updated": 1794816395042,
+ "updated": 1794824179108,
  "blog": [],
  "favs": [],
  "art": [],
