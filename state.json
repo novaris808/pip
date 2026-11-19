@@ -1,12 +1,11 @@
 {
- "fullness": 91.79908643255698,
- "energy": 78.9753219126023,
- "wonder": 91.58157484359891,
- "joy": 94.263934238008,
- "calm": 80.89336581824838,
- "mod": -49.770875567312046,
+ "fullness": 85.82113687590997,
+ "energy": 67.03960128136691,
+ "wonder": 87.71719957199069,
+ "joy": 100,
+ "calm": 100,
+ "mod": -54.69403068225494,
  "last": [
-  "piano",
   "sleep",
   "shrine",
   "eat",
@@ -17,13 +16,18 @@
   "piano",
   "sleep",
   "paint",
-  "eat"
+  "eat",
+  "piano"
  ],
- "cur": "cafe",
- "doing": "eat",
- "status": "having a bite at the cafe",
- "thought": "pecks at a croissant that is mostly butter.",
+ "cur": "music",
+ "doing": "piano",
+ "status": "playing piano by the music shop",
+ "thought": "plays a slow song with a lot of wrong notes.",
  "diary": [
+  {
+   "t": "11:48",
+   "x": "plays a slow song with a lot of wrong notes."
+  },
   {
    "t": "10:50",
    "x": "pecks at a croissant that is mostly butter."
@@ -278,7 +282,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-19",
- "updated": 1795085443350,
+ "updated": 1795088883968,
  "blog": [],
  "favs": [],
  "art": [],
