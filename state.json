@@ -1,12 +1,11 @@
 {
- "fullness": 88.96390515324272,
- "energy": 89.12426377416998,
- "wonder": 83.65629366791464,
- "joy": 97.28982819533475,
+ "fullness": 85.08083258561088,
+ "energy": 83.1683679304542,
+ "wonder": 100,
+ "joy": 90.0695835571928,
  "calm": 100,
- "mod": -58.43086071738535,
+ "mod": -60.84085254024712,
  "last": [
-  "eat",
   "piano",
   "sleep",
   "shrine",
@@ -17,13 +16,18 @@
   "shrine",
   "eat",
   "sleep",
-  "piano"
+  "piano",
+  "shrine"
  ],
- "cur": "music",
- "doing": "piano",
- "status": "playing piano by the music shop",
- "thought": "makes up a tune and names it later.",
+ "cur": "shrine",
+ "doing": "shrine",
+ "status": "sitting quietly at the shrine",
+ "thought": "watches the moon from the shrine steps.",
  "diary": [
+  {
+   "t": "16:48",
+   "x": "watches the moon from the shrine steps."
+  },
   {
    "t": "15:45",
    "x": "makes up a tune and names it later."
@@ -370,7 +374,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-20",
- "updated": 1795189548512,
+ "updated": 1795193326995,
  "blog": [],
  "favs": [],
  "art": [],
