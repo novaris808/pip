@@ -1,10 +1,10 @@
 {
- "fullness": 83.54871240247397,
- "energy": 74.76522002100977,
- "wonder": 92.714635892623,
- "joy": 100,
- "calm": 100,
- "mod": -61.51349190258906,
+ "fullness": 80.47448624194917,
+ "energy": 100,
+ "wonder": 90.59779130292588,
+ "joy": 98.54269614659061,
+ "calm": 98.85794837160839,
+ "mod": -47.460464925719364,
  "last": [
   "sleep",
   "piano",
@@ -19,11 +19,15 @@
   "movie",
   "piano"
  ],
- "cur": "music",
- "doing": "piano",
- "status": "playing piano by the music shop",
- "thought": "plays a slow song with a lot of wrong notes.",
+ "cur": "roost",
+ "doing": "sleep",
+ "status": "asleep at his roost",
+ "thought": "zzz",
  "diary": [
+  {
+   "t": "01:59",
+   "x": "Goes to sleep at his roost."
+  },
   {
    "t": "00:45",
    "x": "plays a slow song with a lot of wrong notes."
@@ -410,7 +414,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-21",
- "updated": 1795221954417,
+ "updated": 1795226385367,
  "blog": [],
  "favs": [],
  "art": [],
