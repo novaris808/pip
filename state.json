@@ -1,12 +1,11 @@
 {
- "fullness": 87.76850319460019,
- "energy": 86.10124180137952,
- "wonder": 97.48367940832571,
+ "fullness": 83.54871240247397,
+ "energy": 74.76522002100977,
+ "wonder": 92.714635892623,
  "joy": 100,
- "calm": 95.63885184975598,
- "mod": -56.656889421750776,
+ "calm": 100,
+ "mod": -61.51349190258906,
  "last": [
-  "eat",
   "sleep",
   "piano",
   "shrine",
@@ -17,13 +16,18 @@
   "eat",
   "sleep",
   "shrine",
-  "movie"
+  "movie",
+  "piano"
  ],
- "cur": "cinema",
- "doing": "movie",
- "status": "outside the cinema, reading posters",
- "thought": "studies a poster about a bird who becomes a pilot.",
+ "cur": "music",
+ "doing": "piano",
+ "status": "playing piano by the music shop",
+ "thought": "plays a slow song with a lot of wrong notes.",
  "diary": [
+  {
+   "t": "00:45",
+   "x": "plays a slow song with a lot of wrong notes."
+  },
   {
    "t": "23:55",
    "x": "studies a poster about a bird who becomes a pilot."
@@ -405,8 +409,8 @@
  "contact": "pip202612@gmail.com",
  "emailsToday": 0,
  "emailsExternal": 0,
- "day": "2026-11-20",
- "updated": 1795218946175,
+ "day": "2026-11-21",
+ "updated": 1795221954417,
  "blog": [],
  "favs": [],
  "art": [],
