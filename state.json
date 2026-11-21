@@ -1,12 +1,11 @@
 {
- "fullness": 73.60343562551863,
- "energy": 100,
- "wonder": 93.60375718012713,
- "joy": 96.91769365939028,
- "calm": 93.84502947206909,
- "mod": -52.47751514159994,
+ "fullness": 100,
+ "energy": 97.2617824730755,
+ "wonder": 90.67156941802459,
+ "joy": 91.0631857451162,
+ "calm": 87.49868172402182,
+ "mod": -57.3093798101905,
  "last": [
-  "sleep",
   "paint",
   "piano",
   "eat",
@@ -17,13 +16,18 @@
   "eat",
   "shrine",
   "movie",
-  "sleep"
+  "sleep",
+  "eat"
  ],
- "cur": "roost",
- "doing": "sleep",
- "status": "asleep at his roost",
- "thought": "takes a short nap on the roost.",
+ "cur": "cafe",
+ "doing": "eat",
+ "status": "having a bite at the cafe",
+ "thought": "pecks at a croissant that is mostly butter.",
  "diary": [
+  {
+   "t": "11:11",
+   "x": "pecks at a croissant that is mostly butter."
+  },
   {
    "t": "10:17",
    "x": "takes a short nap on the roost."
@@ -430,7 +434,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-21",
- "updated": 1795256224076,
+ "updated": 1795259505779,
  "blog": [],
  "favs": [],
  "art": [],
