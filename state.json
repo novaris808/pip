@@ -1,12 +1,11 @@
 {
- "fullness": 96.13349195494463,
- "energy": 72.85667330364035,
- "wonder": 100,
- "joy": 100,
- "calm": 93.12899209159168,
- "mod": -65.84806979486461,
+ "fullness": 91.3579718312502,
+ "energy": 100,
+ "wonder": 95.26627109553829,
+ "joy": 96.73481710319638,
+ "calm": 88.73412400366445,
+ "mod": -70.22865964225892,
  "last": [
-  "shrine",
   "eat",
   "movie",
   "piano",
@@ -17,13 +16,18 @@
   "sleep",
   "piano",
   "eat",
-  "paint"
+  "paint",
+  "sleep"
  ],
- "cur": "gallery",
- "doing": "paint",
- "status": "painting outside the gallery",
- "thought": "paints rain, but angrier.",
+ "cur": "roost",
+ "doing": "sleep",
+ "status": "asleep at his roost",
+ "thought": "takes a short nap on the roost.",
  "diary": [
+  {
+   "t": "18:20",
+   "x": "takes a short nap on the roost."
+  },
   {
    "t": "17:35",
    "x": "paints rain, but angrier."
@@ -562,7 +566,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-22",
- "updated": 1795368914462,
+ "updated": 1795371613482,
  "blog": [],
  "favs": [],
  "art": [],
