@@ -1,12 +1,11 @@
 {
- "fullness": 87.43421436403845,
- "energy": 97.9122946417892,
- "wonder": 100,
- "joy": 93.20873028649788,
- "calm": 100,
- "mod": -80.12888490466601,
+ "fullness": 100,
+ "energy": 95.92106398761534,
+ "wonder": 96.26311028302484,
+ "joy": 89.7242394203418,
+ "calm": 97.6885655274362,
+ "mod": -84.37129763363639,
  "last": [
-  "paint",
   "piano",
   "sleep",
   "eat",
@@ -17,13 +16,18 @@
   "eat",
   "paint",
   "sleep",
-  "shrine"
+  "shrine",
+  "eat"
  ],
- "cur": "shrine",
- "doing": "shrine",
- "status": "sitting quietly at the shrine",
- "thought": "watches the moon from the shrine steps.",
+ "cur": "cafe",
+ "doing": "eat",
+ "status": "having a bite at the cafe",
+ "thought": "pecks at a croissant that is mostly butter.",
  "diary": [
+  {
+   "t": "00:04",
+   "x": "pecks at a croissant that is mostly butter."
+  },
   {
    "t": "23:27",
    "x": "watches the moon from the shrine steps."
@@ -497,8 +501,8 @@
  "contact": "pip202612@gmail.com",
  "emailsToday": 0,
  "emailsExternal": 0,
- "day": "2026-11-21",
- "updated": 1795303667372,
+ "day": "2026-11-22",
+ "updated": 1795305887020,
  "blog": [],
  "favs": [],
  "art": [],
