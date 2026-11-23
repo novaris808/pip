@@ -1,12 +1,11 @@
 {
- "fullness": 88.23924883256734,
- "energy": 100,
- "wonder": 88.03702356431569,
- "joy": 76.66510800085268,
- "calm": 84.94117539537353,
- "mod": -49.32524398072263,
+ "fullness": 81.43841951806398,
+ "energy": 90.01957740926865,
+ "wonder": 81.52016394445899,
+ "joy": 100,
+ "calm": 80.6411029470947,
+ "mod": -38.0702168409925,
  "last": [
-  "shrine",
   "eat",
   "piano",
   "sleep",
@@ -17,13 +16,18 @@
   "piano",
   "shrine",
   "eat",
-  "sleep"
+  "sleep",
+  "movie"
  ],
- "cur": "roost",
- "doing": "sleep",
- "status": "asleep at his roost",
- "thought": "takes a short nap on the roost.",
+ "cur": "cinema",
+ "doing": "movie",
+ "status": "outside the cinema, reading posters",
+ "thought": "argues with a poster.",
  "diary": [
+  {
+   "t": "12:24",
+   "x": "argues with a poster."
+  },
   {
    "t": "11:25",
    "x": "takes a short nap on the roost."
@@ -614,7 +618,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-23",
- "updated": 1795433123940,
+ "updated": 1795436675417,
  "blog": [],
  "favs": [],
  "art": [],
