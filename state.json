@@ -1,12 +1,11 @@
 {
- "fullness": 91.43461536617122,
- "energy": 100,
- "wonder": 89.27600705487464,
- "joy": 83.45910690455358,
- "calm": 84.47000796416522,
- "mod": -52.589524167161734,
+ "fullness": 88.22333244723815,
+ "energy": 90.25944586306872,
+ "wonder": 83.63212708672015,
+ "joy": 99.52285673548145,
+ "calm": 100,
+ "mod": -57.20145775064614,
  "last": [
-  "shrine",
   "paint",
   "eat",
   "sleep",
@@ -17,13 +16,18 @@
   "movie",
   "shrine",
   "eat",
-  "sleep"
+  "sleep",
+  "piano"
  ],
- "cur": "roost",
- "doing": "sleep",
- "status": "asleep at his roost",
- "thought": "takes a short nap on the roost.",
+ "cur": "music",
+ "doing": "piano",
+ "status": "playing piano by the music shop",
+ "thought": "makes up a tune and names it later.",
  "diary": [
+  {
+   "t": "16:50",
+   "x": "makes up a tune and names it later."
+  },
   {
    "t": "15:54",
    "x": "takes a short nap on the roost."
@@ -619,10 +623,6 @@
   {
    "t": "21:54",
    "x": "lights a tiny candle and says nothing."
-  },
-  {
-   "t": "00:00",
-   "x": "Pip wakes up. Nobody told him what to do."
   }
  ],
  "pages": [],
@@ -630,7 +630,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-23",
- "updated": 1795449252943,
+ "updated": 1795452616583,
  "blog": [],
  "favs": [],
  "art": [],
