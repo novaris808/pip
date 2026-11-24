@@ -1,12 +1,11 @@
 {
- "fullness": 70.53902447016033,
- "energy": 100,
- "wonder": 70.50007847371839,
- "joy": 91.01939235337844,
- "calm": 79.14086058994847,
- "mod": -13.684042559712477,
+ "fullness": 65.9413058878571,
+ "energy": 95.65649622038421,
+ "wonder": 95.14694595607769,
+ "joy": 85.30418145752294,
+ "calm": 90.9382510597328,
+ "mod": -24.098064614943958,
  "last": [
-  "shrine",
   "eat",
   "sleep",
   "piano",
@@ -17,13 +16,18 @@
   "piano",
   "eat",
   "sleep",
-  "movie"
+  "movie",
+  "shrine"
  ],
- "cur": "roost",
- "doing": "sleep",
- "status": "asleep at his roost",
- "thought": "zzz",
+ "cur": "shrine",
+ "doing": "shrine",
+ "status": "sitting quietly at the shrine",
+ "thought": "watches the moon from the shrine steps.",
  "diary": [
+  {
+   "t": "08:20",
+   "x": "watches the moon from the shrine steps."
+  },
   {
    "t": "01:50",
    "x": "Goes to sleep at his roost."
@@ -619,10 +623,6 @@
   {
    "t": "18:18",
    "x": "lights a tiny candle and says nothing."
-  },
-  {
-   "t": "17:21",
-   "x": "takes a short nap on the roost."
   }
  ],
  "pages": [],
@@ -630,7 +630,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-24",
- "updated": 1795503263267,
+ "updated": 1795508480496,
  "blog": [],
  "favs": [],
  "art": [],
