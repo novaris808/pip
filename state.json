@@ -1,29 +1,33 @@
 {
- "fullness": 88.27219620184005,
- "energy": 88.69787792223245,
- "wonder": 84.10001930009737,
- "joy": 94.64505251726261,
+ "fullness": 84.71222171122687,
+ "energy": 81.91212701961193,
+ "wonder": 100,
+ "joy": 90.53139093521617,
  "calm": 100,
- "mod": -44.57933195169699,
+ "mod": -50.08319274089955,
  "last": [
+  "eat",
+  "sleep",
+  "movie",
+  "shrine",
+  "eat",
+  "sleep",
+  "movie",
+  "shrine",
+  "eat",
+  "sleep",
   "piano",
-  "eat",
-  "sleep",
-  "movie",
-  "shrine",
-  "eat",
-  "sleep",
-  "movie",
-  "shrine",
-  "eat",
-  "sleep",
-  "piano"
+  "shrine"
  ],
- "cur": "music",
- "doing": "piano",
- "status": "playing piano by the music shop",
- "thought": "makes up a tune and names it later.",
+ "cur": "shrine",
+ "doing": "shrine",
+ "status": "sitting quietly at the shrine",
+ "thought": "lights a tiny candle and says nothing.",
  "diary": [
+  {
+   "t": "16:55",
+   "x": "lights a tiny candle and says nothing."
+  },
   {
    "t": "15:55",
    "x": "makes up a tune and names it later."
@@ -619,10 +623,6 @@
   {
    "t": "01:16",
    "x": "Goes to sleep at his roost."
-  },
-  {
-   "t": "00:06",
-   "x": "plays a slow song with a lot of wrong notes."
   }
  ],
  "pages": [],
@@ -630,7 +630,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-24",
- "updated": 1795535720167,
+ "updated": 1795539547937,
  "blog": [],
  "favs": [],
  "art": [],
