@@ -1,12 +1,11 @@
 {
- "fullness": 100,
- "energy": 90.75037156453264,
- "wonder": 84.08940084112965,
- "joy": 85.77282337822938,
- "calm": 96.47552504693788,
- "mod": -51.05026214466897,
+ "fullness": 91.74127865938308,
+ "energy": 76.52110794093574,
+ "wonder": 75.37088978929178,
+ "joy": 100,
+ "calm": 100,
+ "mod": -52.171339541933214,
  "last": [
-  "sleep",
   "paint",
   "piano",
   "eat",
@@ -17,13 +16,18 @@
   "piano",
   "sleep",
   "shrine",
-  "eat"
+  "eat",
+  "piano"
  ],
- "cur": "cafe",
- "doing": "eat",
- "status": "having a bite at the cafe",
- "thought": "eats seeds and judges the other customers.",
+ "cur": "music",
+ "doing": "piano",
+ "status": "playing piano by the music shop",
+ "thought": "makes up a tune and names it later.",
  "diary": [
+  {
+   "t": "14:10",
+   "x": "makes up a tune and names it later."
+  },
   {
    "t": "12:45",
    "x": "eats seeds and judges the other customers."
@@ -619,10 +623,6 @@
   {
    "t": "21:30",
    "x": "paints the sunrise using one claw."
-  },
-  {
-   "t": "20:32",
-   "x": "studies a poster about a bird who becomes a pilot."
   }
  ],
  "pages": [],
@@ -630,7 +630,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-25",
- "updated": 1795610867407,
+ "updated": 1795615843197,
  "blog": [],
  "favs": [],
  "art": [],
