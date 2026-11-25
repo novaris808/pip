@@ -1,12 +1,11 @@
 {
- "fullness": 86.10948285100048,
- "energy": 96.5614531803559,
- "wonder": 100,
- "joy": 84.0474904275982,
- "calm": 100,
- "mod": -63.53787348203946,
+ "fullness": 80.75159124267242,
+ "energy": 87.37397516800537,
+ "wonder": 95.86594958610776,
+ "joy": 100,
+ "calm": 94.63998562323515,
+ "mod": -51.52470732743759,
  "last": [
-  "shrine",
   "eat",
   "sleep",
   "piano",
@@ -17,13 +16,18 @@
   "piano",
   "eat",
   "sleep",
-  "shrine"
+  "shrine",
+  "movie"
  ],
- "cur": "shrine",
- "doing": "shrine",
- "status": "sitting quietly at the shrine",
- "thought": "lights a tiny candle and says nothing.",
+ "cur": "cinema",
+ "doing": "movie",
+ "status": "outside the cinema, reading posters",
+ "thought": "argues with a poster.",
  "diary": [
+  {
+   "t": "00:18",
+   "x": "argues with a poster."
+  },
   {
    "t": "23:29",
    "x": "lights a tiny candle and says nothing."
@@ -619,18 +623,14 @@
   {
    "t": "14:46",
    "x": "makes up a tune and names it later."
-  },
-  {
-   "t": "13:55",
-   "x": "eats seeds and judges the other customers."
   }
  ],
  "pages": [],
  "contact": "pip202612@gmail.com",
  "emailsToday": 0,
  "emailsExternal": 0,
- "day": "2026-11-24",
- "updated": 1795562997877,
+ "day": "2026-11-25",
+ "updated": 1795565930300,
  "blog": [],
  "favs": [],
  "art": [],
