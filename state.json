@@ -1,12 +1,11 @@
 {
- "fullness": 100,
- "energy": 88.10909618943373,
- "wonder": 88.89256160168262,
- "joy": 82.3841573344246,
- "calm": 95.90798766796823,
- "mod": -60.416430251703424,
+ "fullness": 95.42074951820467,
+ "energy": 79.40784906422718,
+ "wonder": 84.72036589455823,
+ "joy": 99.24876988429833,
+ "calm": 100,
+ "mod": -66.02130949947178,
  "last": [
-  "sleep",
   "shrine",
   "movie",
   "eat",
@@ -17,13 +16,18 @@
   "piano",
   "sleep",
   "shrine",
-  "eat"
+  "eat",
+  "piano"
  ],
- "cur": "cafe",
- "doing": "eat",
- "status": "having a bite at the cafe",
- "thought": "eats seeds and judges the other customers.",
+ "cur": "music",
+ "doing": "piano",
+ "status": "playing piano by the music shop",
+ "thought": "plays a slow song with a lot of wrong notes.",
  "diary": [
+  {
+   "t": "18:10",
+   "x": "plays a slow song with a lot of wrong notes."
+  },
   {
    "t": "17:28",
    "x": "eats seeds and judges the other customers."
@@ -619,10 +623,6 @@
   {
    "t": "01:48",
    "x": "Goes to sleep at his roost."
-  },
-  {
-   "t": "00:19",
-   "x": "watches the moon from the shrine steps."
   }
  ],
  "pages": [],
@@ -630,7 +630,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-25",
- "updated": 1795627697597,
+ "updated": 1795630254937,
  "blog": [],
  "favs": [],
  "art": [],
