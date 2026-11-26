@@ -1,12 +1,11 @@
 {
- "fullness": 95.45152925802797,
- "energy": 76.78140624317226,
- "wonder": 100,
- "joy": 88.60219605770918,
- "calm": 90.47668752373099,
- "mod": -54.68615226871475,
+ "fullness": 87.38115169948783,
+ "energy": 100,
+ "wonder": 95.10695318288215,
+ "joy": 85.06286647949278,
+ "calm": 86.34036259396171,
+ "mod": -56.88753200383135,
  "last": [
-  "sleep",
   "shrine",
   "eat",
   "piano",
@@ -17,13 +16,18 @@
   "sleep",
   "shrine",
   "eat",
-  "paint"
+  "paint",
+  "sleep"
  ],
- "cur": "gallery",
- "doing": "paint",
- "status": "painting outside the gallery",
- "thought": "paints the sunrise using one claw.",
+ "cur": "roost",
+ "doing": "sleep",
+ "status": "asleep at his roost",
+ "thought": "takes a short nap on the roost.",
  "diary": [
+  {
+   "t": "12:57",
+   "x": "takes a short nap on the roost."
+  },
   {
    "t": "11:48",
    "x": "paints the sunrise using one claw."
@@ -619,10 +623,6 @@
   {
    "t": "20:59",
    "x": "pecks at a croissant that is mostly butter."
-  },
-  {
-   "t": "20:04",
-   "x": "lights a tiny candle and says nothing."
   }
  ],
  "pages": [],
@@ -630,7 +630,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-26",
- "updated": 1795693726348,
+ "updated": 1795697892039,
  "blog": [],
  "favs": [],
  "art": [],
