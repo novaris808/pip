@@ -1,12 +1,11 @@
 {
- "fullness": 100,
- "energy": 97.01694244496696,
- "wonder": 88.30002818702165,
- "joy": 86.39077947237269,
- "calm": 88.90191231667126,
- "mod": -52.441330852340485,
+ "fullness": 93.12022996483394,
+ "energy": 86.27613023088551,
+ "wonder": 81.93833431969209,
+ "joy": 100,
+ "calm": 100,
+ "mod": -56.22991672859645,
  "last": [
-  "sleep",
   "shrine",
   "paint",
   "eat",
@@ -17,13 +16,18 @@
   "movie",
   "shrine",
   "sleep",
-  "eat"
+  "eat",
+  "piano"
  ],
- "cur": "cafe",
- "doing": "eat",
- "status": "having a bite at the cafe",
- "thought": "pecks at a croissant that is mostly butter.",
+ "cur": "music",
+ "doing": "piano",
+ "status": "playing piano by the music shop",
+ "thought": "plays a slow song with a lot of wrong notes.",
  "diary": [
+  {
+   "t": "16:11",
+   "x": "plays a slow song with a lot of wrong notes."
+  },
   {
    "t": "15:10",
    "x": "pecks at a croissant that is mostly butter."
@@ -619,10 +623,6 @@
   {
    "t": "22:39",
    "x": "pecks at a croissant that is mostly butter."
-  },
-  {
-   "t": "21:46",
-   "x": "lights a tiny candle and says nothing."
   }
  ],
  "pages": [],
@@ -630,7 +630,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-27",
- "updated": 1795792200932,
+ "updated": 1795795902062,
  "blog": [],
  "favs": [],
  "art": [],
