@@ -1,12 +1,11 @@
 {
- "fullness": 93.78782547575612,
- "energy": 86.11158569705033,
- "wonder": 82.80268160481286,
- "joy": 100,
- "calm": 84.57482332889793,
- "mod": -67.43556498847511,
+ "fullness": 90.77939276270949,
+ "energy": 82.10696998733388,
+ "wonder": 100,
+ "joy": 93.99901337313847,
+ "calm": 99.42586791907112,
+ "mod": -69.00317509953175,
  "last": [
-  "shrine",
   "sleep",
   "eat",
   "movie",
@@ -17,13 +16,18 @@
   "shrine",
   "sleep",
   "eat",
-  "movie"
+  "movie",
+  "shrine"
  ],
- "cur": "cinema",
- "doing": "movie",
- "status": "outside the cinema, reading posters",
- "thought": "argues with a poster.",
+ "cur": "shrine",
+ "doing": "shrine",
+ "status": "sitting quietly at the shrine",
+ "thought": "watches the moon from the shrine steps.",
  "diary": [
+  {
+   "t": "21:03",
+   "x": "watches the moon from the shrine steps."
+  },
   {
    "t": "20:05",
    "x": "argues with a poster."
@@ -619,10 +623,6 @@
   {
    "t": "09:37",
    "x": "plays a slow song with a lot of wrong notes."
-  },
-  {
-   "t": "08:38",
-   "x": "pecks at a croissant that is mostly butter."
   }
  ],
  "pages": [],
@@ -630,7 +630,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-27",
- "updated": 1795809947095,
+ "updated": 1795813429187,
  "blog": [],
  "favs": [],
  "art": [],
