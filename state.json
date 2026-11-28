@@ -1,10 +1,10 @@
 {
- "fullness": 95.64075527399939,
- "energy": 71.92025815774134,
- "wonder": 100,
- "joy": 100,
- "calm": 91.07947037451041,
- "mod": -56.758954910550706,
+ "fullness": 91.81062848136143,
+ "energy": 100,
+ "wonder": 98.50393135228823,
+ "joy": 98.82382386652101,
+ "calm": 89.47109451293349,
+ "mod": -43.5504106875875,
  "last": [
   "sleep",
   "eat",
@@ -19,11 +19,15 @@
   "eat",
   "paint"
  ],
- "cur": "gallery",
- "doing": "paint",
- "status": "painting outside the gallery",
- "thought": "paints the sunrise using one claw.",
+ "cur": "roost",
+ "doing": "sleep",
+ "status": "asleep at his roost",
+ "thought": "zzz",
  "diary": [
+  {
+   "t": "02:12",
+   "x": "Goes to sleep at his roost."
+  },
   {
    "t": "00:57",
    "x": "paints the sunrise using one claw."
@@ -619,10 +623,6 @@
   {
    "t": "14:45",
    "x": "takes a short nap on the roost."
-  },
-  {
-   "t": "13:55",
-   "x": "eats seeds and judges the other customers."
   }
  ],
  "pages": [],
@@ -630,7 +630,7 @@
  "emailsToday": 0,
  "emailsExternal": 0,
  "day": "2026-11-28",
- "updated": 1795827427376,
+ "updated": 1795831952883,
  "blog": [],
  "favs": [],
  "art": [],
